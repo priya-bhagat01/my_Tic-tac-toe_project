@@ -51,6 +51,8 @@ function showWinner(winner) {
 }
 
 function checkWinner() {
+	let isWinnerFound = false;
+
 	winningPatterns.forEach(pattern => {
 		let posValue1 = boxes[pattern[0]].innerText;
 		let posValue2 = boxes[pattern[1]].innerText;
@@ -60,9 +62,21 @@ function checkWinner() {
 			if (posValue1 === posValue2 && posValue2 === posValue3) {
 				disabledButtons();
 				showWinner(posValue1);
+				isWinnerFound = true;
+				return;
 			}
 		}
 	})
+
+	if (!isWinnerFound) {
+		let isDraw = Array.from(boxes).every((box) => box.innerText !== "");
+
+		if (isDraw) {
+			msg.innerText = `Game is Tie!`;
+			msgContainer.classList.remove("hide");
+			disabledButtons();
+		}
+	}
 }
 
 let msgContainer = document.querySelector(".winner");
