@@ -68,10 +68,16 @@ function checkWinner() {
 let msgContainer = document.querySelector(".winner");
 let msg = document.querySelector(".win");
 
-let resetButton = document.querySelector(".reset-btn");
+let resetButton = document.querySelector("#reset-btn");
 
 function resetGame() {
 	turnO = true;
 	enableButtons();
 	msgContainer.classList.add("hide");
 };
+
+let newGameButton = document.querySelector(".new");
+
+newGameButton.addEventListener("click", resetGame);
+
+resetButton.addEventListener("click", resetGame);
