@@ -9,21 +9,32 @@
 </head>
 <body>
 	<div class="main">
-		<button class="position">X</button>
-		<button class="position">O</button>
-		<button class="position"></button>
-		<button class="position"></button>
-		<button class="position"></button>
-		<button class="position"></button>
-		<button class="position"></button>
-		<button class="position"></button>
-		<button class="position"></button>
-	</div>
-	<div class="Reset">
-		<button>Reset Button</button>
-	</div>
-	<div class="winner">
-		<p class="win">Winner is X</p>
+		<div class="game-title">
+			<h1>Tic Tac Toe</h1>
+		</div>
+
+		<div class="winner hide">
+			<p class="win">Winner is X</p>
+			<button class="new">New Game</button>
+		</div>
+
+		<div class="container">
+			<div class="boxes">
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+				<button class="position"></button>
+			</div>
+		</div>
+
+		<div class="Reset">
+			<button id="reset-btn">Reset Game</button>
+		</div>
 	</div>
 </body>
 </html>
